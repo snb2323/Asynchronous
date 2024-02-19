@@ -2,7 +2,6 @@
   "name": "ain",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
   "dependencies": {
     "@ant-design/icons": "^5.2.6",
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
