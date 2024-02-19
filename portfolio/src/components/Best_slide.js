@@ -17,7 +17,7 @@ function Best_slide(props) {
             loop={true}
             rewind={true}
             navigation={true}
-
+            className="Bestsw"
 
 
             // autoplay={{
@@ -43,7 +43,7 @@ function Best_slide(props) {
             {
                 props.data && props.data.best_slide && props.data.best_slide.map((best_slide, i) => (
 
-                    <SwiperSlide key={`slide-${i}`} className='px-5 container Bestsw bg-white position-relative d-flex flex-column flex-md-row align-items-center justify-content-center  '>
+                    <SwiperSlide key={`slide-${i}`} className='px-5 container bg-white position-relative d-flex flex-column flex-md-row align-items-center justify-content-center  '>
                         <div className='img_pc position-relative col-md-5 me-md-auto ms-2 order-md-2 px-5'>
                             <img src={best_slide.src} alt={`ain_bast ${i + 1}`} >
                             </img>
