@@ -1,0 +1,27 @@
+{
+  "name": "nodeproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "web.js",
+  "scripts": {
+    "server": "node ./web.js",
+    "front": "cd portfolio && npm run build",
+    "start": "concurrently  \"npm run server\" \"npm run front\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "dheltus1r@dheltus1r.cafe24app.com:dheltus1r_dheltus1r"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql": "^2.18.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.0.3"
+  }
+}
