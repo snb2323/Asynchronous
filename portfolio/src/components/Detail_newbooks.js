@@ -3,12 +3,41 @@ import { useParams } from 'react-router-dom';
 import datainfo from '../data/data.json';
 import { Dropdown, DropdownButton } from 'react-bootstrap';
 
+// 비동기통신 api
+import { productApi } from '../api/api'
 
-
-function Detail_newbooks() {
+function Detail_newbooks({ bookdata }) {
+  const [content, setContent] = useState({})
   const { index } = useParams();
   const [option, setoption] = useState(false)
   const [quantity, setQuantity] = useState(1);
+
+  const fetchDataAndSetState = async (tn, id = null) => {
+
+    try {
+      const response = await productApi(`${tn}/${id}`); // 2가지경우에 응대하는 각 식이 존재해야해
+      if (response instanceof Error) {
+        throw response; // 에러가 발생한 경우 다시 throw하여 catch 블록으로 전달
+      }
+      if (Array.isArray(response.data)) {
+        setContent((prev) => (
+          {
+            ...prev,
+            [tn]: [...response.data]
+          }
+        )
+
+        );
+      } else {
+        // 만약 response.data가 배열이 아니라면 예외 처리
+        throw new Error('Response data is not an array');
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+
 
   const handleIncrement = () => {
     setQuantity(quantity + 1);
@@ -24,25 +53,39 @@ function Detail_newbooks() {
     setoption(e);
   };
 
+
+
+  useEffect(() => {
+    //상품 api 딱 한번만 실행
+    fetchDataAndSetState('detail', index);
+    fetchDataAndSetState('detailnewbooks', index);
+    console.log(`bookdata 확인해줘 ${bookdata}`)
+  }, []);
+
+  useEffect(() => {
+    // console.log("ts interface 복붙용", content)
+    console.log(content["detail"])
+  }, [content])
+
   return (
 
     <>
       <div className='newbookstitle ms-md-5 px-md-3 mt-5'>
         <div className='price text-center px-md-5'>
-          <h3 className='detailh3'>{datainfo.detailnewbooks[index].h4}</h3>
-          <p className='mx-md-5 text-center'>{datainfo.detailnewbooks[index].p}</p>
+          <h3 className='detailh3'>{content && content["detailnewbooks"] && content["detailnewbooks"][0].h4}</h3>
+          <p className='mx-md-5 text-center'>{content && content["detailnewbooks"] && content["detailnewbooks"][0].p}</p>
         </div>
       </div>
       <div className='d-md-flex over px-md-5'>
         <div className='detali_im col-md-7  d-flex justify-content-center'>
-          <img className='bookimg' src={datainfo.detailnewbooks[index].src} alt="newbook" />
+          <img className='bookimg' src={content && content["detailnewbooks"] && content["detailnewbooks"][0].src} alt="newbook" />
         </div>
         <div className='detaildata col-5 py-5 mr-5 px-3'>
           <content className="detailnewbooks col-4">
-            <h4 className='detailh'>"{datainfo.detailnewbooks[index].detail.subject}"</h4>
+            <h4 className='detailh'>"{content && content["detail"] && content["detail"][0].subject}"</h4>
             <div className="detalip">
-              <p>{datainfo.detailnewbooks[index].detail.inner}</p>
-              <p>{datainfo.detailnewbooks[index].detail.detail.split('|').map((e) => {
+              <p>{content && content["detail"] && content["detail"][0].inner}</p>
+              <p>{content && content["detail"] && content["detail"][0].detail.split('|').map((e) => {
                 return (
                   <>
                     <p className='pt-4'>{e}</p>
@@ -51,7 +94,7 @@ function Detail_newbooks() {
               })}</p>
             </div>
             <div><strong> 저자소개</strong></div>
-            <div><strong>{datainfo.detailnewbooks[index].detail.auth}</strong></div>
+            <div><strong>{content && content["detail"] && content["detail"][0].auth}</strong></div>
             <div>
               <span>판 형 142*180mm</span>
             </div>

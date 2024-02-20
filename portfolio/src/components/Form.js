@@ -67,7 +67,7 @@ function Form() {
                 </div>
 
                 <fieldset>
-                    <div class="userin  d-flex justify-content-center align-items-center py-3">
+                    <div class="userin row d-flex justify-content-center align-items-center py-3">
                         <div class="dda row justify-content-around align-items-center container pt-5 px-5 ">
                             <div className="user mx-auto col-sm-5 text-start d-flex ">
                                 <div className="  mx-auto text-start ">
@@ -76,7 +76,7 @@ function Form() {
 
                                         </label>
                                         <input
-                                            className={`bor  mb-4 0 ${errors.name ? "invalid" : "valid"}`}
+                                            className={`mb-4 0 ${errors.name ? "invalid" : "valid"}`}
                                             id="name"
                                             type="text"
                                             name="name"

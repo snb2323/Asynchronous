@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import datainfo from '../data/data.json';
 import { Route, Link } from 'react-router-dom';
@@ -6,13 +7,15 @@ import Navibook from './Styled/navibook';
 
 
 
-export default function New() {
+export default function New({ bookdata }) {
+
+    console.log('자식 컴포넌트에서 받은 데이터:', bookdata);
     return (
         <>
             <Navibook>
                 <h1 className='newtitle'>New</h1>
                 <div className='as col-row  d-flex mb-5'>
-                    {datainfo.New.map((book, index) => (
+                    {bookdata && bookdata.slice(-9).reverse().map((book, index) => (
                         <div key={index} >
                             <Link to={`/new-books/${index}`}>
                                 <div className='newb'>
