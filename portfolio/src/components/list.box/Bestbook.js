@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import datainfo from '../../data/data.json'
 import Navibook from "../Styled/navibook";
 
 
 function Bestbooks() {
+
+
+
+
+
     return (
         <>
             <Navibook>

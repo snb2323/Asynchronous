@@ -63,28 +63,28 @@ function Navi_var() {
                     <ul className='d-lg-flex  p-0  m-0 '>
 
                         <li>
-                            <Link to="/Essay">
+                            <Link to="/essay">
                                 <span>에세이/시</span>
                             </Link>
                         </li>
 
                         <li>
-                            <Link to="/Design">
+                            <Link to="/design">
                                 <span>디자인/문화</span>
                             </Link>
                         </li>
                         <li>
-                            <Link to="/Illust">
+                            <Link to="/illust">
                                 <span>만화/일러스트</span>
                             </Link>
                         </li>
                         <li>
-                            <Link to="/Photo">
+                            <Link to="/photo">
                                 <span>사진</span>
                             </Link>
                         </li>
                         <li>
-                            <Link to="/Postcard">
+                            <Link to="/postcard">
                                 <span>엽서북</span>
                             </Link>
                         </li>

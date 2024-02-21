@@ -59,6 +59,3 @@ export const productApi = async (tablenminfo, data = null) => {
     }
 
 }
-
-
-

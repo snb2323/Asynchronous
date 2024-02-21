@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from 'react';
 import '../../src/lee.scss'
 import MainWrapper from './Styled/mainstyle'
 import { Link } from "react-router-dom";
@@ -19,10 +19,14 @@ import styled from "styled-components";
 
 
 
-export default function Main() {
+export default function Main({ bookdata }) {
     const [isHovered, setIsHovered] = useState(false);
     const [clickedItemIndex, setClickedItemIndex] = useState(null);
 
+
+    useEffect(() => {
+        console.log('Main 컴포넌트 ---> 전달받음', bookdata);
+    }, [])
 
 
     return (
@@ -59,8 +63,8 @@ export default function Main() {
                             },
                         }}
                     >
-                        {datainfo.Design.map((book, index) => (
-                            <SwiperSlide className="Mainswiper" key={index}>
+                        {bookdata && bookdata.map((book, index) => (
+                            <SwiperSlide className="Mainswiper" key={book.id}>
                                 <div className="mainteduli "
                                     onMouseEnter={() => setIsHovered(true)}
                                     onMouseLeave={() => setIsHovered(false)}
