@@ -9,6 +9,7 @@ import { productApi } from '../api/api'
 function Detail_newbooks(props) {
 
   const [content, setContent] = useState("");
+
   const { index } = useParams();
   const [option, setoption] = useState(false)
   const [quantity, setQuantity] = useState(1);
@@ -42,8 +43,8 @@ function Detail_newbooks(props) {
   useEffect(() => {
 
     setContent(props);
-    console.log("여기는 Result컴포넌트", content, "상태변수값", content && content, index)
-
+    console.log("여기는 Result컴포넌트", content, "상태변수값", content && content.bookdata, index)
+    //detailbooks ,  details
 
   }, [content, index])
 
@@ -54,22 +55,22 @@ function Detail_newbooks(props) {
   return (
 
     <>
-      {/* <div className='newbookstitle ms-md-5 px-md-3 mt-5'>
+      <div className='newbookstitle ms-md-5 px-md-3 mt-5'>
         <div className='price text-center px-md-5'>
-          <h3 className='detailh3'>{content && content["detailnewbooks"] && content["detailnewbooks"][0].h4}</h3>
-          <p className='mx-md-5 text-center'>{content && content["detailnewbooks"] && content["detailnewbooks"][0].p}</p>
+          <h3 className='detailh3'>{content && content.bookdata["detailbooks"] && content.bookdata["detailbooks"][index].h4}</h3>
+          <p className='mx-md-5 text-center'>{content && content.bookdata["detailbooks"] && content.bookdata["detailbooks"][index].p}</p>
         </div>
       </div>
       <div className='d-md-flex over px-md-5'>
         <div className='detali_im col-md-7  d-flex justify-content-center'>
-          <img className='bookimg' src={content && content["detailnewbooks"] && content["detailnewbooks"][0].src} alt="newbook" />
+          <img className='bookimg' src={content && content.bookdata["detailbooks"] && content.bookdata["detailbooks"][index].src} alt="newbook" />
         </div>
         <div className='detaildata col-5 py-5 mr-5 px-3'>
-          <content className="detailnewbooks col-4">
-            <h4 className='detailh'>"{content && content["detail"] && content["detail"][0].subject}"</h4>
+          <div className="detailnewbooks col-4">
+            <h4 className='detailh'>"{content && content.bookdata["details"] && content.bookdata["details"][index].subject}"</h4>
             <div className="detalip">
-              <p>{content && content["detail"] && content["detail"][0].inner}</p>
-              <p>{content && content["detail"] && content["detail"][0].detail.split('|').map((e) => {
+              <p>{content && content.bookdata["details"] && content.bookdata["details"][index].inner}</p>
+              <p>{content && content.bookdata["details"] && content.bookdata["details"][index].detail.split('|').map((e) => {
                 return (
                   <>
                     <p className='pt-4'>{e}</p>
@@ -78,12 +79,12 @@ function Detail_newbooks(props) {
               })}</p>
             </div>
             <div><strong> 저자소개</strong></div>
-            <div><strong>{content && content["detail"] && content["detail"][0].auth}</strong></div>
+            <div><strong>{content && content.bookdata["details"] && content.bookdata["details"][index].auth}</strong></div>
             <div>
-              <span>판 형 142*180mm</span>
+              <span>{content && content.bookdata["details"] && content.bookdata["details"][index].size}</span>
             </div>
             <div>
-              <span>분 량: 300p</span>
+              <span>분 량: {content && content.bookdata["details"] && content.bookdata["details"][index].page}</span>
             </div>
             <div className="datail_item">
               <div>
@@ -126,12 +127,12 @@ function Detail_newbooks(props) {
               </div>
             </div>
             <div className='buy_btn'>
-              <a href='#'>구매하기</a>
-              <a href='#'>장바구니</a>
+              <a href='#none'>구매하기</a>
+              <a href='#none'>장바구니</a>
             </div>
-          </content>
+          </div>
         </div>
-      </div> */}
+      </div>
 
     </>
   );
