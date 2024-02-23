@@ -1,10 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import datainfo from '../../data/data.json';
+// import datainfo from '../../data/data.json';
 import Navibook from '../Styled/navibook';
 
 
-export default function Essay({ bookdata, tablenm, title }) {
+export default function Essay(props) {
+    const { bookdata, tablenm, title } = props
 
     const [tn, settn] = useState(tablenm)
     // const tablesql = useRef(tablenm)
@@ -12,8 +13,6 @@ export default function Essay({ bookdata, tablenm, title }) {
 
     useEffect(() => {
         console.log("데이블이름 -----------------------", tablenm);
-
-
 
         settn(tablenm)
         console.log("여기는 Result컴포넌트", tablenm, "상태변수값", tn, bookdata && bookdata)
@@ -30,7 +29,7 @@ export default function Essay({ bookdata, tablenm, title }) {
                 <div className='as d-flex '>
                     {bookdata && bookdata[tablenm].map((book, index) => (
                         <div key={index}>
-                            <Link to={`/new-books/${index}`}>
+                            <Link to={`/new-books/${book.id}`}>
                                 <img style={{ width: "340px", height: "340px" }} className='newb' src={book.src} alt={book.alt} />
                             </Link>
                             <h4>{book.h4}</h4>

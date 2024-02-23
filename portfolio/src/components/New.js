@@ -17,7 +17,7 @@ export default function New({ bookdata }) {
                 <div className='as col-row  d-flex mb-5'>
                     {bookdata && bookdata.slice(-9).reverse().map((book, index) => (
                         <div key={index} >
-                            <Link to={`/new-books/${index}`}>
+                            <Link to={`/new-books/${book.id}`}>
                                 <div className='newb'>
                                     <img style={{ width: "400px", height: "400px" }} src={book.src} alt={book.alt} />
                                     <div className='fun hidden'>관심상품아이콘</div>

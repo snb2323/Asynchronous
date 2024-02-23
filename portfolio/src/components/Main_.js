@@ -69,7 +69,7 @@ export default function Main({ bookdata }) {
                                     onMouseEnter={() => setIsHovered(true)}
                                     onMouseLeave={() => setIsHovered(false)}
                                 >
-                                    <Link to={`/new-books/${index}`}>
+                                    <Link to={`/new-books/${book.id}`}>
                                         <img
                                             src={book.src}
                                             alt={book.alt}

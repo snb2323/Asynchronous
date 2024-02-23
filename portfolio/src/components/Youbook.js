@@ -1,27 +1,43 @@
-import React, { useState } from "react";
-import '../../src/lee.scss'
-import MainWrapper from './Styled/mainstyle'
+import React, { useEffect, useState } from "react";
+
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Scrollbar } from 'swiper/modules';
-import datainfo from "../data/data.json"
+import MainWrapper from './Styled/mainstyle'
+
+// import datainfo from "../data/data.json"
+
 import 'swiper/css';
 import 'swiper/css/effect-fade';
 import 'swiper/css/scrollbar';
 import 'swiper/swiper-bundle.css';
 // import { useState } from "react";
 // import heartImage from "./img/icon_1.png"
+
 import { HeartOutlined, HeartFilled } from '@ant-design/icons';
 import cartImage from "./img/icon_2.png"
 import styled from "styled-components";
 
+import '../../src/lee.scss'
 
 
 
 
-export default function Main() {
+
+export default function Main(props) {
+    const { bookdata } = props; // App에서 랜더링할때마다 props 전달한 거임
+
+    // const [youbook, setyoubook] = useState([]);
+
     const [isHovered, setIsHovered] = useState(false);
     const [clickedItemIndex, setClickedItemIndex] = useState(null);
+
+    useEffect(() => {
+
+        console.log("Youbook----", bookdata && bookdata);
+        // setyoubook(bookdata)
+
+    }, [bookdata])
 
 
 
@@ -59,13 +75,13 @@ export default function Main() {
                             },
                         }}
                     >
-                        {datainfo.User.map((book, index) => (
-                            <SwiperSlide className="Mainswiper" key={index}>
+                        {bookdata && bookdata.map((book, index) => (
+                            <SwiperSlide className="Mainswiper" key={book.id}>
                                 <div className="mainteduli "
                                     onMouseEnter={() => setIsHovered(true)}
                                     onMouseLeave={() => setIsHovered(false)}
                                 >
-                                    <Link to={`/new-books/${index}`}>
+                                    <Link to={`/new-books/${book.id}`}>
                                         <img
                                             src={book.src}
                                             alt={book.alt}

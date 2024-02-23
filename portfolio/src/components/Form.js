@@ -68,7 +68,7 @@ function Form() {
 
                 <fieldset>
                     <div class="userin d-flex justify-content-center align-items-center py-3">
-                        <div class="dda d-flex justify-content-around align-items-center container pt-5 px-5 ">
+                        <div class="dda row justify-content-around align-items-center container pt-5 px-5 ">
                             <div className="user mx-auto col-sm-5 text-start d-flex ">
                                 <div className="  mx-auto text-start ">
                                     <div className="bor mx-auto text-start">

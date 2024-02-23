@@ -6,36 +6,16 @@ import { Dropdown, DropdownButton } from 'react-bootstrap';
 // 비동기통신 api
 import { productApi } from '../api/api'
 
-function Detail_newbooks({ bookdata }) {
-  const [content, setContent] = useState({})
+function Detail_newbooks(props) {
+
+  const [content, setContent] = useState("");
   const { index } = useParams();
   const [option, setoption] = useState(false)
   const [quantity, setQuantity] = useState(1);
 
-  const fetchDataAndSetState = async (tn, id = null) => {
+  const { detailbooks, details } = props;
 
-    try {
-      const response = await productApi(`${tn}/${id}`); // 2가지경우에 응대하는 각 식이 존재해야해
-      if (response instanceof Error) {
-        throw response; // 에러가 발생한 경우 다시 throw하여 catch 블록으로 전달
-      }
-      if (Array.isArray(response.data)) {
-        setContent((prev) => (
-          {
-            ...prev,
-            [tn]: [...response.data]
-          }
-        )
 
-        );
-      } else {
-        // 만약 response.data가 배열이 아니라면 예외 처리
-        throw new Error('Response data is not an array');
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
 
 
@@ -54,23 +34,27 @@ function Detail_newbooks({ bookdata }) {
   };
 
 
+  const [tn, settn] = useState(props);
+
+
+
 
   useEffect(() => {
-    //상품 api 딱 한번만 실행
-    fetchDataAndSetState('detail', index);
-    fetchDataAndSetState('detailnewbooks', index);
-    console.log(`bookdata 확인해줘 ${bookdata}`)
-  }, []);
 
-  useEffect(() => {
-    // console.log("ts interface 복붙용", content)
-    console.log(content["detail"])
-  }, [content])
+    setContent(props);
+    console.log("여기는 Result컴포넌트", content, "상태변수값", content && content, index)
+
+
+  }, [content, index])
+
+
+
+
 
   return (
 
     <>
-      <div className='newbookstitle ms-md-5 px-md-3 mt-5'>
+      {/* <div className='newbookstitle ms-md-5 px-md-3 mt-5'>
         <div className='price text-center px-md-5'>
           <h3 className='detailh3'>{content && content["detailnewbooks"] && content["detailnewbooks"][0].h4}</h3>
           <p className='mx-md-5 text-center'>{content && content["detailnewbooks"] && content["detailnewbooks"][0].p}</p>
@@ -147,7 +131,7 @@ function Detail_newbooks({ bookdata }) {
             </div>
           </content>
         </div>
-      </div>
+      </div> */}
 
     </>
   );

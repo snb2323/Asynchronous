@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import datainfo from './data/data.json'
@@ -30,7 +30,8 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import './lee.scss'
 
 function App() {
-    const [content, setgnbdata] = useState({}); // api 변수
+    const [content, setgnbdata] = useState(null); // api 변수
+    // 라우터 컴포넌트의 타이틀
     const tablenmarr = ['Essay', 'Design', 'Illust', 'Photo', 'Postcard', 'Curation']
 
     const apireseive = useCallback(async (tn) => {
@@ -53,48 +54,40 @@ function App() {
     }, [])
 
 
-    // useEffect(() => {
-    //     apireseive('detail').then(() => {
-    //         return apireseive('detailnewbooks');
-    //     }).then(() => {
-    //         apireseive('bestbook'); //bestbook
-    //         apireseive('essay');
-    //         return apireseive('design');
-
-
-    //     }).then(() => {
-    //         apireseive('illust');
-    //         apireseive('photo');
-    //         apireseive('postcard');
-    //     });
-    // }, [])
-
-    // 
-
-
 
     useEffect(() => {
+        //모든 아쉬운점 비동기프로세스 전부 넘겨줘서 props 전달 시 하위컴포넌트 랜더링지연을 막기위해서...
         apireseive('detail');
-        apireseive('detailnewbooks');
-        apireseive('bestbook');
         apireseive('essay');
         apireseive('design');
         apireseive('illust');
         apireseive('photo');
         apireseive('postcard');
+
+
+
+        apireseive('detailnewbooks');
+        apireseive('bestbook');
+        apireseive('UserFeedback');
     }, [])
+
+
+
 
 
 
 
     useEffect(() => {
         console.log(content)
-        //랜더링되는 함수 넣지않기
+        //랜더링되는 함수 넣지않기  
         // console.log("New 컴포넌트의 넘겨야할 데이터 / 위치 App", content['detail'])
 
         // console.log("bestbook / 위치 App", content['bestbook'])
         // console.log("design / 위치 App", content['design'])
         // console.log("Essay / 위치 App", content['essay'])
+
+        // 필수 데이터 확인
+        console.log("User / 위치 App", "Youbook", content && content['UserFeedback'], content)
 
     }, [content])
 
@@ -133,7 +126,7 @@ function App() {
                         <ListBox></ListBox>
                         <Main bookdata={content && content['bestbook']}></Main>
                         <New bookdata={content && content['detailnewbooks']} ></New>
-                        <User></User>
+                        <User bookdata={content && content['UserFeedback']} ></User>
                         <Form></Form>
                         <Footer></Footer>
                     </>
@@ -143,7 +136,7 @@ function App() {
                 <Route path="/Curation/" element={<Curation />} />
                 <Route path="/Goods/" element={<Goods />} />
                 <Route path="/Program/" element={<Program />} />
-                <Route path="/new-books/:index" element={<DetailNewbooks bookdata={content["detailnewbooks"] && content["detailnewbooks"]} />} />
+                <Route path="/new-books/:index" element={<DetailNewbooks bookdata={{ detailbooks: content && content["detailnewbooks"], details: content && content["detail"] }} />} />
             </Routes>
         </>
     );
