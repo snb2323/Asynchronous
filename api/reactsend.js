@@ -17,6 +17,7 @@ mysqlapi.get('/:tablenm', (req, res) => {
         connect.query(`select * from ${tablenm}`, (error, result) => {
             if (error) throw console.log("글 목록 쿼리문 오류")
             res.send(result)
+            connect.release();
         })
     })
 })
@@ -28,7 +29,8 @@ mysqlapi.get('/:tablenm/:id', (req, res) => {
         if (err) throw console.log("DB접속정보확인 " + err)
         connect.query(`select * from ${tablenm} where id = ${pk}`, (error, result) => {
             if (error) throw console.log("글보기 쿼리문 오류")
-            res.send(result)
+            res.send(result);
+            connect.release();
         })
     })
 })
@@ -41,7 +43,8 @@ mysqlapi.post('/:tablenm/:id/d', (req, res) => {
         if (err) throw console.log("DB접속정보확인 " + err)
         connect.query(`DELETE FROM ${tablenm} WHERE id = ${pk}`, (error, result) => {
             if (error) throw console.log("쿼리문 오류")
-            res.send(result)
+            res.send(result);
+            connect.release();
         })
     })
 })
@@ -59,7 +62,8 @@ mysqlapi.post('/:tablenm', (req, res) => {
         connect.query(`INSERT INTO ${tablenm}  (${columns})
         VALUES (${values})`, (error, result) => {
             if (error) throw console.log("글수정 혹은 글삽입 쿼리문 오류")
-            res.send(result)
+            res.send(result);
+            connect.release();
         })
     })
 })
@@ -78,7 +82,8 @@ mysqlapi.post('/:tablenm/:id/m', (req, res) => {
         if (err) throw console.log("Post DB접속정보확인 " + err)
         connect.query(`UPDATE ${tablenm} SET  ${setClause} WHERE id = ${pk}`, (error, result) => {
             if (error) throw console.log("글수정 혹은 글삽입 쿼리문 오류")
-            res.send(result)
+            res.send(result);
+            connect.release();
         })
     })
 })
