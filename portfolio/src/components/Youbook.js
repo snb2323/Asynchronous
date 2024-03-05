@@ -50,13 +50,13 @@ export default function Main(props) {
             </div>
 
             <MainWrapper>
-                <div>
+                <div className="bg-white py-5 mb-5">
                     <Swiper
                         modules={[Navigation, Scrollbar]}
                         loop={true}
                         rewind={true}
                         navigation={true}
-                        spaceBetween={50}
+                        spaceBetween={0}
                         slidesPerView={1}
                         centeredSlides={true}
                         scrollbar={{ draggable: true, dragSize: 24 }}
@@ -76,12 +76,12 @@ export default function Main(props) {
                         }}
                     >
                         {bookdata && bookdata.map((book, index) => (
-                            <SwiperSlide className="Mainswiper" key={book.id}>
+                            <SwiperSlide className="Mainswiper border-0 px-3" key={book.id}>
                                 <div className="mainteduli "
                                     onMouseEnter={() => setIsHovered(true)}
                                     onMouseLeave={() => setIsHovered(false)}
                                 >
-                                    <Link to={`/new-books/${book.id}`}>
+                                    <Link to={`/new-books/${book.id}`} className="d-block m-3 overflow-hidden" style={{ background: "#f5f5f5", borderRadius: "3rem" }}>
                                         <img
                                             src={book.src}
                                             alt={book.alt}

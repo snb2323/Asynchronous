@@ -57,6 +57,8 @@ function App() {
 
     useEffect(() => {
         //모든 아쉬운점 비동기프로세스 전부 넘겨줘서 props 전달 시 하위컴포넌트 랜더링지연을 막기위해서...
+
+
         apireseive('detail');
         apireseive('essay');
         apireseive('design');
@@ -97,10 +99,10 @@ function App() {
             <NaviVar />
             <Routes>
                 {/* {
-                    tablenmarr.map((tn, idx) => <Route path={`/${tn}`} element={<Essay apireseive={apireseive} bookdata={content && content} tablenm={tn} />} />
+                    tablenmarr.map((tn, idx) => <Route path={`/:${tn}`} element={<Result  bookdata={content && content} tablenm={tn}  title={tablenmarr[0]} />} />
 
                     )
-                 } */}
+                 }  */}
 
 
                 {/* <Route path="/essay" element={<Result apireseive={() => { apireseive('essay'); }}  bookdata={content && content} tablenm={'essay'} title={tablenmarr[0]} />} />

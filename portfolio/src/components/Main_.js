@@ -38,7 +38,7 @@ export default function Main({ bookdata }) {
             </div>
 
             <MainWrapper>
-                <div>
+                <div className='mb-5'>
                     <Swiper
                         modules={[Navigation, Scrollbar]}
                         loop={true}
