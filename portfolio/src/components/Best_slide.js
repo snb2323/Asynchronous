@@ -20,7 +20,7 @@ function BestSlide({ data }) {
     );
 
     return (
-        <Swiper
+        <Swiper className="container"
             modules={[Navigation, EffectFade, Autoplay, Pagination]}
             effect="fade"
             loop={true}

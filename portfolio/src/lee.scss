@@ -282,9 +282,9 @@ ul {
 
 .newtitle {
     font-style: italic;
+    padding: 100px 0;
     margin: 10px;
     height: 100px;
-    line-height: 5;
     text-align: center;
 }
 
@@ -309,10 +309,11 @@ ul {
 
 
 .navivartitle {
+    padding: 50px 0;
     border-top: 1px solid #d1edff;
     font-style: italic;
     font-weight: normal;
-    font-size: 1.5rem;
+    font-size: 2rem !important;
     align-items: center;
     text-align: center;
     justify-content: center;
@@ -488,6 +489,11 @@ ul {
 
 .mainteduli {
     position: relative;
+    padding: 30px;
+}
+
+.swiper-scrollbar-drag {
+    background: black !important;
 }
 
 // .mainname {
@@ -504,7 +510,8 @@ ul {
 // }
 .Mainswiper {
     border: 15px solid white;
-    border-top: 1px solid #f5f5f5;
+    border-radius: 10%;
+    margin: 0;
 }
 
 .mainname {
@@ -513,13 +520,13 @@ ul {
 
 .maintitle {
     // margin-bottom: 20px;
+    padding: 100px;
     text-align: center;
-    line-height: 2;
-    height: 100px;
     justify-content: center;
     align-items: center;
     font-style: italic;
 }
+
 
 .mainslide {
     display: flex;
@@ -762,12 +769,6 @@ footer {
 
 .face {
     font-size: 19px;
-}
-
-.btns {
-    position: relative;
-    top: 50px;
-    left: 5px;
 }
 
 #footerwrap {

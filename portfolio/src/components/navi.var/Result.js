@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 // import datainfo from '../../data/data.json';
 import Navibook from '../Styled/navibook';
+import Price from '../Styled/Pirce';
 
 
 export default function Essay(props) {
@@ -33,7 +34,7 @@ export default function Essay(props) {
                                 <img style={{ width: "340px", height: "340px" }} className='newb' src={book.src} alt={book.alt} />
                             </Link>
                             <h4>{book.h4}</h4>
-                            <p>{book.p}</p>
+                            <Price>{book.p}</Price>
                         </div>
                     ))
                     }

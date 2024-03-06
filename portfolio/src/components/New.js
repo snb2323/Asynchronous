@@ -15,7 +15,7 @@ export default function New({ bookdata }) {
             <Navibook>
                 <h1 className='newtitle'>New</h1>
                 <div className='as col-row  d-flex mb-5'>
-                    {bookdata && bookdata.slice(-9).reverse().map((book, index) => (
+                    {bookdata && bookdata.slice(-8).reverse().map((book, index) => (
                         <div key={index} >
                             <Link to={`/new-books/${book.id}`}>
                                 <div className='newb'>

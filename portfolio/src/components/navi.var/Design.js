@@ -2,6 +2,7 @@ import React from 'react';
 import datainfo from '../../data/data.json';
 import { Link } from 'react-router-dom';
 import Navibook from '../Styled/navibook';
+import Price from '../Styled/Pirce';
 
 export default function Design() {
     return (
@@ -15,7 +16,9 @@ export default function Design() {
                                 <img style={{ width: "340px", height: "340px" }} className='newb' src={book.src} alt={book.alt} />
                             </Link>
                             <h4>{book.h4}</h4>
-                            <p>{book.p}</p>
+                            ///////////////////
+                            <Price> {book.p}</Price>
+                            <p className='pirce'>{book.p}</p>
                         </div>
 
 

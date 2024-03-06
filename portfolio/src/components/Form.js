@@ -52,7 +52,7 @@ function Form() {
                     </div>
                     :
 
-                    <form className="form " noValidate onSubmit={handleSubmit(onSubmit)}>
+                    <form className="form p-5" noValidate onSubmit={handleSubmit(onSubmit)}>
                         <div className=" d-flex justify-content-center ">
                             <h1 className="formh mt-3 sm-d-flex ">상담문의</h1>
                         </div>
@@ -60,7 +60,7 @@ function Form() {
                         <fieldset>
                             <div class="userin d-flex justify-content-center align-items-center py-3">
                                 <div class="dda row justify-content-around align-items-center container pt-5 px-5 ">
-                                    <div className="user mx-auto col-sm-5 text-start d-flex ">
+                                    <div className="user  col-sm-5 text-start d-flex ">
                                         <div className="  mx-auto text-start ">
                                             <div className="bor mx-auto text-start">
                                                 <label className="" htmlFor="name">
@@ -120,24 +120,25 @@ function Form() {
 
                                         </div>
                                     </div>
-                                    <div className="tarea col-5 ms-auto col-sm-d-block">
+                                    <div className="tarea col-5  col-sm-d-block">
                                         <textarea
                                             className="text  position-rel "
                                             id="tx"
-                                            cols="30"
+                                            cols="25"
                                             rows="3"
                                             placeholder="불편 사항이나 문의 사항 남겨주시면 
                                 신속하고 친절하게 안내해 드리겠습니다."
                                             {...register("message")}
                                         ></textarea>
                                     </div>
+                                    <div className="btns mt-5">
+                                        <button type="submit" disabled={isSubmitting}>
+                                            문의하기
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
-                            <div className="btns">
-                                <button type="submit" disabled={isSubmitting}>
-                                    문의하기
-                                </button>
-                            </div>
+
                         </fieldset>
                     </form>
             }

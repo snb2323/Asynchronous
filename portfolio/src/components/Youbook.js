@@ -44,7 +44,7 @@ export default function Main(props) {
     return (
 
         <>
-            <div className="container maintitle">
+            <div className="container maintitle ">
                 <h1>타인의책장</h1>
                 <p>고객님들의 직접 작성한 리뷰를 확인해보세요.</p>
             </div>
