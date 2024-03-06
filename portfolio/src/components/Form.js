@@ -1,38 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
-import { useState } from "react";
 
 function Form() {
-
-    // const productApi = async (myName, data = null) => {
-    // 위에 myname은 sql테이블이름 , get post 결정
-    //     try {
-    //         if (data) { //글쓰기
-
-    //             const response = await axios.post(`/data/${myName}`, {
-    //                 headers: {
-    //                     'Content-Type': 'multipart/form-data',
-    //                 },
-    //                 body: data //전송데이터 form 데이터 
-    //             });
-
-    //             if (!response.ok) {
-    //                 throw new Error('Network response was not ok');
-    //             }
-
-    //             const responseData = await response.json(); // Assuming the response is JSON, adjust as necessary
-    //             return responseData;
-    //         } else { //글 목록
-    //             return axios.get(`/data/${myName}`);
-    //         }
-
-    //     } catch (error) {
-    //         console.log(error);
-    //         return error;
-    //     }
-    // };
-
 
     const [resresult, setresresult] = useState(false)
 
@@ -177,5 +147,3 @@ function Form() {
 }
 
 export default Form;
-
-

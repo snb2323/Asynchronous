@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { CiSearch } from "react-icons/ci";
-
 import { Link } from "react-router-dom";
 import mainlogo from '../img/logo.png';
 
@@ -51,9 +50,10 @@ function Navi_var() {
 
             <div className='d-flex justify-content-between align-items-center px-lg-5 py-3 position-relative zup'>
                 <h1 className='mb-0 w-0 zup position-relative'>
-                    <Link to="/" className='d-block'>
+
+                    <a href="/" className='d-block'>
                         <img className='logo ms-4' src={mainlogo} alt='로고' />
-                    </Link>
+                    </a>
                 </h1>
                 <div className={`btni  d-md-none `}>
                     <button onClick={togglemenu} className='border-0 bg-transparent '>메뉴</button>

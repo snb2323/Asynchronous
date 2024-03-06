@@ -237,7 +237,6 @@ ul {
 
 
 
-
     &::before {
         content: "";
         display: block;
@@ -722,6 +721,23 @@ small {
     overflow-x: hidden;
 }
 
+.w-100 {
+    width: 100%;
+}
+
+#footerwrap {
+
+    display: flex;
+    overflow-x: hidden;
+    align-content: stretch;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.footer_section {
+    width: 100%;
+}
+
 .footer-li,
 .footer-p {
 
@@ -815,6 +831,10 @@ footer {
 
 .mainitem.d-flex {
     display: flex;
+}
+
+.spa {
+    width: 1378px;
 }
 
 //모바일 
