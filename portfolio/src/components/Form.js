@@ -44,11 +44,15 @@ function Form() {
         <div className="sectionform">
             {
                 resresult ?
-                    <div>
-                        빠른 답변을드리도록 하겠습니다.
-                        <button onClick={() => {
-                            setresresult(false)
-                        }}>다시신청하기</button>
+                    <div className="formbtnn">
+                        <div className="formp">
+                            <p> 빠른 답변을 드리도록 하겠습니다.</p>
+                        </div>
+                        <div className="form btn">
+                            <button onClick={() => {
+                                setresresult(false)
+                            }}>다시신청하기</button>
+                        </div>
                     </div>
                     :
 

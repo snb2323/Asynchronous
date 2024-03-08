@@ -16,7 +16,6 @@ export default function Design() {
                                 <img style={{ width: "340px", height: "340px" }} className='newb' src={book.src} alt={book.alt} />
                             </Link>
                             <h4>{book.h4}</h4>
-                            ///////////////////
                             <Price> {book.p}</Price>
                             <p className='pirce'>{book.p}</p>
                         </div>

@@ -632,6 +632,14 @@ ul {
     font-weight: 400;
 }
 
+.formbtnn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+    flex-direction: column;
+}
+
 .formh {
     position: relative;
     color: #ddd;

@@ -130,7 +130,7 @@ function App() {
                         <New bookdata={content && content['detailnewbooks']} ></New>
                         <User bookdata={content && content['UserFeedback']} ></User>
                         <Form></Form>
-                        <Footer></Footer>
+
                     </>
                 } />
                 {/* <Route path="/new-books/" element={<NewBooks bookdata={"뭐라도 보여줘"} />} /> */}
@@ -140,6 +140,7 @@ function App() {
                 <Route path="/Program/" element={<Program />} />
                 <Route path="/new-books/:index" element={<DetailNewbooks bookdata={{ detailbooks: content && content["detailnewbooks"], details: content && content["detail"] }} />} />
             </Routes>
+            <Footer></Footer>
         </>
     );
 }
