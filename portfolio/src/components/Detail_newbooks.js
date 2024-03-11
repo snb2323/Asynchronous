@@ -11,6 +11,8 @@ function Detail_newbooks(props) {
   const [content, setContent] = useState("");
 
   const { index } = useParams();
+  //주소에서 전달
+
   const [option, setoption] = useState(false)
   const [quantity, setQuantity] = useState(1);
 
@@ -57,20 +59,20 @@ function Detail_newbooks(props) {
     <>
       <div className='newbookstitle ms-md-5 px-md-3 mt-5'>
         <div className='price text-center px-md-5'>
-          <h3 className='detailh3'>{content && content.bookdata["detailbooks"] && content.bookdata["detailbooks"][index].h4}</h3>
-          <p className='mx-md-5 text-center'>{content && content.bookdata["detailbooks"] && content.bookdata["detailbooks"][index].p}</p>
+          <h4 className='detailh3'>{content && content.bookdata && content.bookdata.detailbooks.filter((dataline) => dataline.id == index)[0].h4}</h4>
+          <p className='mx-md-5 text-center'>{content && content.bookdata && content.bookdata.detailbooks && content.bookdata.detailbooks.filter((dataline) => dataline.id == index)[0].p}</p>
         </div>
       </div>
       <div className='d-md-flex over px-md-5'>
         <div className='detali_im col-md-7  d-flex justify-content-center'>
-          <img className='bookimg' src={content && content.bookdata["detailbooks"] && content.bookdata["detailbooks"][index].src} alt="newbook" />
+          <img className='bookimg' src={content && content.bookdata["detailbooks"] && content.bookdata["detailbooks"].filter((dataline) => dataline.id == index)[0].src} alt="newbook" />
         </div>
         <div className='detaildata col-5 py-5 mr-5 px-3'>
           <div className="detailnewbooks">
-            <h4 className='detailh'>"{content && content.bookdata["details"] && content.bookdata["details"][index].subject}"</h4>
+            <h4 className='detailh'>"{content && content.bookdata["details"] && content.bookdata["details"].filter((dataline) => dataline.id == index)[0].subject}"</h4>
             <div className="detalip">
-              <p>{content && content.bookdata["details"] && content.bookdata["details"][index].inner}</p>
-              <p>{content && content.bookdata["details"] && content.bookdata["details"][index].detail.split('|').map((e) => {
+              <p>{content && content.bookdata["details"] && content.bookdata["details"].filter((dataline) => dataline.id == index)[0].inner}</p>
+              <p>{content && content.bookdata["details"] && content.bookdata["details"].filter((dataline) => dataline.id == index)[0].detail.split('|').map((e) => {
                 return (
                   <>
                     <p className='pt-4'>{e}</p>
@@ -79,12 +81,12 @@ function Detail_newbooks(props) {
               })}</p>
             </div>
             <div><strong> 저자소개</strong></div>
-            <div><strong>{content && content.bookdata["details"] && content.bookdata["details"][index].auth}</strong></div>
+            <div><strong>{content && content.bookdata["details"] && content.bookdata["details"].filter((dataline) => dataline.id == index)[0].auth}</strong></div>
             <div>
-              <span>{content && content.bookdata["details"] && content.bookdata["details"][index].size}</span>
+              <span>{content && content.bookdata["details"] && content.bookdata["details"].filter((dataline) => dataline.id == index)[0].size}</span>
             </div>
             <div>
-              <span>분 량: {content && content.bookdata["details"] && content.bookdata["details"][index].page}</span>
+              <span>분 량: {content && content.bookdata["details"] && content.bookdata["details"].filter((dataline) => dataline.id == index)[0].page}</span>
             </div>
             <div className="datail_item">
               <div>

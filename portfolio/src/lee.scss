@@ -245,6 +245,7 @@ ul {
         background-repeat: no-repeat;
         width: 30px;
         height: 30px;
+        z-index: 100000;
     }
 
     &::after {
@@ -255,6 +256,7 @@ ul {
         background-size: 25px;
         width: 50%;
         height: 30px;
+        z-index: 100000;
     }
 }
 
@@ -632,6 +634,10 @@ ul {
     font-weight: 400;
 }
 
+.icon3 {
+    z-index: 100000;
+}
+
 .bi-book:before {
     margin-left: 20px;
     /* padding-left: 10px; */
@@ -701,7 +707,7 @@ input::placeholder {
 }
 
 .valid {
-    border: 2px solid green;
+    border: 2px solid #9ecdfb;
     background: url(./components/img/true.png) no-repeat right center;
     background-size: 15px;
 
@@ -786,7 +792,8 @@ small {
 }
 
 .eg {
-    color: #95ef95;
+    color: #9ecdfb;
+
     font-size: 1.5rem;
     padding: 5px;
 }
@@ -808,6 +815,9 @@ footer {
 }
 
 
+textarea:focus {
+    outline: none;
+}
 
 .face {
     font-size: 19px;
