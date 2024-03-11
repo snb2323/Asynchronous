@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import datainfo from '../data/data.json';
+// import datainfo from '../../data/data.json'
 import { Route, Link } from 'react-router-dom';
 import Navibook from './Styled/navibook';
+import Price from './Styled/Pirce';
 
 
-
-
+const num = 123456789
+console.log(num.toLocaleString())
 export default function New({ bookdata }) {
 
     console.log('자식 컴포넌트에서 받은 데이터:', bookdata);
@@ -16,6 +17,7 @@ export default function New({ bookdata }) {
                 <h1 className='newtitle'>New</h1>
                 <div className='as col-row  d-flex mb-5'>
                     {bookdata && bookdata.slice(-8).reverse().map((book, index) => (
+
                         <div key={index} >
                             <Link to={`/new-books/${book.id}`}>
                                 <div className='newb'>
@@ -25,7 +27,7 @@ export default function New({ bookdata }) {
 
                             </Link>
                             <h4>{book.h4}</h4>
-                            <p>{book.p}</p>
+                            <span><strong><Price>{String(book.p).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</Price></strong></span>
 
                         </div>
 

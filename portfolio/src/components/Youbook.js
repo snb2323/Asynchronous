@@ -19,6 +19,7 @@ import cartImage from "./img/icon_2.png"
 import styled from "styled-components";
 
 import '../../src/lee.scss'
+import Price from "./Styled/Pirce";
 
 
 
@@ -111,8 +112,6 @@ export default function Main(props) {
                     </Swiper>
 
                 </div >
-
-
             </MainWrapper >
 
         </>

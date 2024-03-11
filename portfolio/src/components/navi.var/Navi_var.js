@@ -27,9 +27,9 @@ function Navi_var() {
                 <div className="mainitem  w-auto position-relative d-flex text-center justify-content-center align-items-center">
                     <ul className='mypg d-flex '>
                         <li >
-                            <a href="#">
-                                <img src="./img/cart.png" alt="장바구니" height="25" />
-                            </a>
+                            <img src="./img/cart.png" alt="장바구니" height="25" onClick={() => {
+                                alert("장바구니 추후 기능구현하기")
+                            }} />
                         </li>
 
                         <li className='px-4'>

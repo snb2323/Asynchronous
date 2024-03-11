@@ -53,7 +53,7 @@ ul {
 
 .mypage a {
     margin: 10px;
-    color: black;
+    color: #fff;
     font-size: 16px;
     text-decoration: none;
 }
@@ -632,7 +632,15 @@ ul {
     font-weight: 400;
 }
 
+.bi-book:before {
+    margin-left: 20px;
+    /* padding-left: 10px; */
+    font-size: 2rem;
+    color: black;
+}
+
 .formbtnn {
+    text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -645,6 +653,10 @@ ul {
     color: #ddd;
 }
 
+.ddad::after {
+    content: "";
+    background: url(./components/img/true.png);
+}
 
 .btns {
     display: flex;
@@ -731,6 +743,15 @@ small {
     position: absolute;
 }
 
+.form_btn button {
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    padding: 5px;
+    border-bottom: 1px solid;
+    font-size: 1.2rem;
+}
+
 //footer
 .footer_section {
     overflow-x: hidden;
@@ -764,11 +785,24 @@ small {
     max-height: 800px;
 }
 
+.eg {
+    color: #95ef95;
+    font-size: 1.5rem;
+    padding: 5px;
+}
 
+.ko {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+// .formiconn {
+//     content: "";
+//     background: url(../public/img/form.png);
+// }
 
 
 footer {
-
     color: #ddd;
     background-color: #02131D;
 }
@@ -885,6 +919,8 @@ footer {
         // left: 45px;
         justify-content: space-between;
     }
+
+
 
 
 

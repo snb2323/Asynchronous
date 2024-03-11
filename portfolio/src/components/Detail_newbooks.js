@@ -66,7 +66,7 @@ function Detail_newbooks(props) {
           <img className='bookimg' src={content && content.bookdata["detailbooks"] && content.bookdata["detailbooks"][index].src} alt="newbook" />
         </div>
         <div className='detaildata col-5 py-5 mr-5 px-3'>
-          <div className="detailnewbooks col-4">
+          <div className="detailnewbooks">
             <h4 className='detailh'>"{content && content.bookdata["details"] && content.bookdata["details"][index].subject}"</h4>
             <div className="detalip">
               <p>{content && content.bookdata["details"] && content.bookdata["details"][index].inner}</p>

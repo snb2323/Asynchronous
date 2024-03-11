@@ -7,7 +7,7 @@ function List_box() {
             <div className='site d-flex justify-content-center align-items-center'>
                 <ul className="p-0">
                     <li className="m-1 m-md-1 m-lg-2 mt-5">
-                        <Link to="/new-books">
+                        <Link to="Listnew">
                             <img src='./img/icon1.png' className="img-fluid" alt='신작도서' />
                             <span>신작도서</span>
                         </Link>

@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 
 import datainfo from './data/data.json'
 import ListBox from './components/List_box';
-// import NewBooks from './components/list.box/New_books';
+import Listnew from './components/list.box/Listnew.js';
 import NaviVar from './components/navi.var/Navi_var';
 import Bestbook from './components/list.box/Bestbook';
 import BestSlide from './components/Best_slide';
@@ -22,7 +22,6 @@ import User from './components/Youbook.js';
 import Form from './components/Form';
 import Footer from './components/Footer_';
 import Scrolltop from './components/Scrollto';
-
 import { productApi } from './api/api.js'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -134,6 +133,7 @@ function App() {
                     </>
                 } />
                 {/* <Route path="/new-books/" element={<NewBooks bookdata={"뭐라도 보여줘"} />} /> */}
+                <Route path="/Listnew/" element={<Listnew />} />
                 <Route path="/Bestbook/" element={<Bestbook />} />
                 <Route path="/Curation/" element={<Curation />} />
                 <Route path="/Goods/" element={<Goods />} />

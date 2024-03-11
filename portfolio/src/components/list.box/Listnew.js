@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import datainfo from '../../data/data.json'
 import Navibook from '../Styled/navibook';
 
-function New_books({ bookdata }) {
+function Listnew({ bookdata }) {
 
     useEffect(() => {
         console.log(`bookdata 확인해줘 ${bookdata}`)
@@ -14,7 +14,7 @@ function New_books({ bookdata }) {
             <Navibook>
                 <h2 className='navivartitle'>New</h2>
                 <div className='as col-row d-flex '>
-                    {datainfo.newbooks.map((book, index) => (
+                    {datainfo.bestbook.map((book, index) => (
                         <div key={index} >
                             <Link to={`/new-books/${index}`}>
                                 <img className='newb' src={book.src} alt={book.alt} />
@@ -31,4 +31,4 @@ function New_books({ bookdata }) {
     );
 }
 
-export default New_books;
+export default Listnew;

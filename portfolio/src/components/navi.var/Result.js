@@ -6,7 +6,6 @@ import Price from '../Styled/Pirce';
 
 
 export default function Result(props) {
-    // 부모 컴포넌트에서 전달받은 props 해체할당
     const { bookdata, tablenm, title } = props;
 
     // 상태 변수 tn과 그 값을 변경하는 settn 함수를 useState 훅을 사용하여 초기화
@@ -37,7 +36,9 @@ export default function Result(props) {
                                 <img style={{ width: "340px", height: "340px" }} className='newb' src={book.src} alt={book.alt} />
                             </Link>
                             <h4>{book.h4}</h4>
-                            <Price>{book.p}</Price>
+                            <Price>{String(book.p).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</Price>
+                            {console.log('가격 데이터 타입:', typeof book.p)}
+
                         </div>
                     ))
                     }

@@ -4,7 +4,6 @@ import MainWrapper from './Styled/mainstyle'
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Scrollbar } from 'swiper/modules';
-import datainfo from "../data/data.json"
 import 'swiper/css';
 import 'swiper/css/effect-fade';
 import 'swiper/css/scrollbar';
@@ -14,6 +13,7 @@ import 'swiper/swiper-bundle.css';
 import { HeartOutlined, HeartFilled } from '@ant-design/icons';
 import cartImage from "./img/icon_2.png"
 import styled from "styled-components";
+import Price from './Styled/Pirce';
 
 
 
@@ -78,7 +78,8 @@ export default function Main({ bookdata }) {
                                     <div className="mainname">
                                         <div>
                                             <h4><strong>{book.h4}</strong></h4>
-                                            <p><strong>{book.p}</strong></p>
+                                            <span><strong><Price>{String(book.p).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</Price></strong></span>
+
                                         </div>
                                         <div className="ico">
                                             <span>
