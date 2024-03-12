@@ -8,11 +8,18 @@
     }
 }
 
+.mainteduli img {
+    width: 100%;
+}
+
 ul {
     margin: 0;
     padding: 0;
 }
 
+.mainbk {
+    background-color: #fff !important;
+}
 
 .w-0 {
     width: 0;
@@ -175,7 +182,7 @@ ul {
     margin: auto;
     width: 70px !important;
     font-size: 15px;
-    background: #d1edff;
+    background: #d1edff !important;
     border-radius: 30px;
     position: absolute;
     bottom: 15% !important;
@@ -491,7 +498,11 @@ ul {
 
 .mainteduli {
     position: relative;
-    padding: 30px;
+}
+
+.mainteduli a {
+    display: block;
+    background-color: rgb(245, 245, 245);
 }
 
 .swiper-scrollbar-drag {
@@ -511,13 +522,38 @@ ul {
 
 // }
 .Mainswiper {
-    border: 15px solid white;
+    border: 10px solid #d1edff;
     border-radius: 10%;
     margin: 0;
 }
 
+.mypage svg {
+    border: 1px solid #fff;
+    background-color: #fff;
+}
+
 .mainname {
     text-align: center;
+    margin-top: 20px;
+}
+
+.swiper-scrollbar {
+    margin-top: 10px;
+    position: absolute;
+    left: 30%;
+    background-color: #d1edff;
+    width: 40%;
+    border-radius: 4px;
+}
+
+.swiper-horizontal>.swiper-scrollbar,
+.swiper-scrollbar.swiper-scrollbar-horizontal {
+    margin-top: 10px;
+    position: absolute;
+    left: 30%;
+    background-color: #d1edff;
+    width: 40%;
+    border-radius: 4px;
 }
 
 .maintitle {
@@ -554,12 +590,7 @@ ul {
     border-top-right-radius: 10px;
 }
 
-.mypg {
-    margin: 10px;
-    line-height: 2;
-    justify-content: center;
-    text-align: center;
-}
+
 
 .mp {
     color: #28292e !important;
@@ -634,16 +665,11 @@ ul {
     font-weight: 400;
 }
 
-.icon3 {
-    z-index: 100000;
+.ico {
+    display: flex;
+    justify-content: space-around;
 }
 
-.bi-book:before {
-    margin-left: 20px;
-    /* padding-left: 10px; */
-    font-size: 2rem;
-    color: black;
-}
 
 .formbtnn {
     text-align: center;
@@ -819,8 +845,24 @@ textarea:focus {
     outline: none;
 }
 
+.scroll-to-top {
+    z-index: 10000000;
+    position: fixed;
+    font-size: 2rem;
+    bottom: 100px;
+    right: 30px;
+    border-radius: 50%;
+    color: black;
+    border: none;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
 .face {
-    font-size: 19px;
+
+    align-items: center;
+    font-size: 1.5rem;
 }
 
 #footerwrap {
