@@ -1,5 +1,7 @@
 <h1>개인 프로젝트 / 아인서점</h1>
-<img src=""></img>
+<img src="https://github.com/snb2323/Asynchronous/blob/master/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202024-03-25%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%204.48.02.png"></img>
+<h1>라우터로 보는 아키텍처 다이어그램</h1>
+<img src="https://github.com/snb2323/Asynchronous/blob/master/%E1%84%8B%E1%85%A1%E1%84%8F%E1%85%B5%E1%84%90%E1%85%A6%E1%86%A8%E1%84%8E%E1%85%A5%20%E1%84%83%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A5%E1%84%80%E1%85%B3%E1%84%85%E1%85%A2%E1%86%B7.png"></img>
 <h2>배포용 링크</h2>
 <a href="http://ainbook.cafe24app.com/">ainbook.cafe24app.com</a>
 <h2>아이템 선정 이유</h2>
