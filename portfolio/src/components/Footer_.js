@@ -54,7 +54,11 @@ export default function Footer() {
                             </a>
                         </li>
                         <li>
-                            <FontAwesomeIcon icon={faBookOpen} style={{ color: "#74C0FC", }} />                        </li>
+                            <a href="https://even-amber-f05.notion.site/1e7173072d194f90a7c2f3a8bb04b2ce" target="_blank" rel="noopener noreferrer" >
+
+                                <FontAwesomeIcon icon={faBookOpen} style={{ color: "#74C0FC", }} />
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>

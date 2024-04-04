@@ -829,6 +829,7 @@ small {
     font-size: 1.5rem;
 }
 
+
 // .formiconn {
 //     content: "";
 //     background: url(../public/img/form.png);
@@ -859,6 +860,14 @@ textarea:focus {
     background-color: transparent;
 }
 
+.faBookOpen {
+    font-size: 20px;
+}
+
+.faBookOpen a {
+    color: black;
+}
+
 .face {
 
     align-items: center;
@@ -867,6 +876,10 @@ textarea:focus {
 
 #footerwrap {
     overflow-x: hidden;
+}
+
+.figma a {
+    margin-right: 30px;
 }
 
 .footer_section {
